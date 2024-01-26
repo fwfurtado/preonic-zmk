@@ -25,6 +25,28 @@
 #define U_PASTE LC(V)
 #define U_UNDO  LC(Z)
 #define U_REDO  LC(LS(Z))
+
+
+// Begin Mouse 
+#define MOVE_Y(vert) ((vert)&0xFFFF)
+#define MOVE_Y_DECODE(encoded) (int16_t)((encoded)&0x0000FFFF)
+#define MOVE_X(hor) (((hor)&0xFFFF) << 16)
+#define MOVE_X_DECODE(encoded) (int16_t)(((encoded)&0xFFFF0000) >> 16)
+
+#define MOVE(hor, vert) (MOVE_X(hor) + MOVE_Y(vert))
+
+#define MOVE_UP MOVE_Y(-ZMK_MOUSE_DEFAULT_MOVE_VAL)
+#define MOVE_DOWN MOVE_Y(ZMK_MOUSE_DEFAULT_MOVE_VAL)
+#define MOVE_LEFT MOVE_X(-ZMK_MOUSE_DEFAULT_MOVE_VAL)
+#define MOVE_RIGHT MOVE_X(ZMK_MOUSE_DEFAULT_MOVE_VAL)
+
+#define SCRL_UP MOVE_Y(ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCRL_DOWN MOVE_Y(-ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCRL_LEFT MOVE_X(-ZMK_MOUSE_DEFAULT_SCRL_VAL)
+#define SCRL_RIGHT MOVE_X(ZMK_MOUSE_DEFAULT_SCRL_VAL)
+// End Mouse
+
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -43,6 +65,24 @@
             tapping_term_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
+        };
+
+        mmv: mouse_move {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
+        };
+
+         msc: mouse_scroll {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_HWHEEL>;
+            y-input-code = <INPUT_REL_WHEEL>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <0>;
         };
     };
 
