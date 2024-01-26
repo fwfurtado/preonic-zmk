@@ -1,0 +1,24 @@
+#include "mouse.h"
+
+/ {
+
+    behaviors {
+        mmv: mouse_move {
+            compatible = "zmk,behavior-none";
+            #binding-cells = <1>;
+            // x-input-code = <INPUT_REL_X>;
+            // y-input-code = <INPUT_REL_Y>;
+            // time-to-max-speed-ms = <300>;
+            // acceleration-exponent = <1>;
+        };
+
+         msc: mouse_scroll {
+            compatible = "zmk,behavior-behavior-none";
+            #binding-cells = <1>;
+            // x-input-code = <INPUT_REL_HWHEEL>;
+            // y-input-code = <INPUT_REL_WHEEL>;
+            // time-to-max-speed-ms = <300>;
+            // acceleration-exponent = <0>;
+        };
+    };
+};
