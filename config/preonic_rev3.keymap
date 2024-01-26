@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 The ZMK Contributors
+ * U_Copyright (c) 2022 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -20,14 +20,13 @@
 #define SYM     5
 #define FUNC    6
 
-#define COPY  LC(C)
-#define CUT   LC(X)
-#define PASTE LC(V)
-#define UNDO  LC(Z)
-#define REDO  LS(LC(Z))
-
-/ {
-    behaviors {
+#define U_COPY  LC(C)
+#define U_CUT   LC(X)
+#define U_PASTE LC(V)
+#define U_UNDO  LC(Z)
+#define U_REDOLS(LC))
+ {
+    behaviors
             hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
@@ -52,7 +51,7 @@
         nav_layer {            
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
-                &none           &none           &none               &none               &none               &none     &none         &kp REDO          &kp PASTE           &kp COPY            &kp CUT             &kp UNDO
+                &none           &none           &none               &none               &none               &none     &none         &kp U_REDO        &kp U_PASTE         &kp U_COPY          &kp U_CUT           &kp U_UNDO
                 &kp LGUI        &kp LALT        &kp LCTRL           &kp LSHIFT          &none               &none     &none         &kp CAPS          &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT
                 &none           &kp RALT        &none               &none               &none               &none     &none         &kp INS           &kp HOME            &kp PG_DN           &kp PG_UP           &kp END
                 &none           &none           &none               &none               &none               &none     &none         &kp ENTER         &kp BSPC            &kp DEL             &none               &none
@@ -61,7 +60,7 @@
         mouse_layer {            
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
-                &none           &none           &none               &none               &none               &none     &none         &kp REDO          &kp PASTE           &kp COPY            &kp CUT             &kp UNDO
+                &none           &none           &none               &none               &none               &none     &none         &kp U_REDO        &kp U_PASTE         &kp U_COPY          &kp U_CUT           &kp U_UNDO
                 &kp LGUI        &kp LALT        &kp LCTRL           &kp LSHIFT          &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &kp RALT        &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &mkp RCLK         &mkp LCLK           &mkp MCLK           &none               &none
