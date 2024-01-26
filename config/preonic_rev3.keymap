@@ -27,7 +27,6 @@
 #define REDO  LS(LC(Z))
 
 / {
-    chosen { zmk,matrix-transform = &layout_grid_transform; };
     behaviors {
             hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
@@ -41,7 +40,7 @@
 
     keymap {
         compatible = "zmk,keymap";
-        base_layer {            
+        default_layer {            
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp Q           &kp W           &kp F               &kp P               &kp B               &none     &none         &kp J             &kp L               &kp U               &kp Y               &kp SEMI
@@ -72,7 +71,7 @@
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &rgb_ug RGB_TOG   &rgb_ug RGB_EFF     &rgb_ug RGB_HUI     &rgb_ug RGB_SAI     &rgb_ug RGB_BRI
-                &kp LGUI        &kp LALT        &kp LCTRL           &kp LSHIFT          &none               &none     &none         &none             &kb C_PREV          &kp C_VOL_DN        &kp C_VOL_UP        &kb C_NEXT
+                &kp LGUI        &kp LALT        &kp LCTRL           &kp LSHIFT          &none               &none     &none         &none             &kp C_PREV          &kp C_VOL_DN        &kp C_VOL_UP        &kp C_NEXT
                 &none           &kp RALT        &none               &none               &none               &none     &none         &bt BT_NXT        &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &kp C_STOP        &kp C_PP            &kp C_MUTE          &none               &none
                 >;
@@ -80,28 +79,28 @@
         num_layer {            
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
-                &kp LBKT        &kp N7          &kp N8              &kp N9              &kb RBKT            &none     &none         &none             &none               &none               &none               &none
+                &kp LBKT        &kp N7          &kp N8              &kp N9              &kp RBKT            &none     &none         &none             &none               &none               &none               &none
                 &kp SEMI        &kp N4          &kp N5              &kp N6              &kp EQUAL           &none     &none         &kp LSHIFT        &kp LCTRL           &kp LALT            &kp LGUI            &none
-                &kp GRAVE       &kp N1          &kp N2              &kp N3              &kb BSLH            &none     &none         &none             &none               &none               &kb RALT            &none
-                &none           &none           &kb DOT             &kp N0              &kb MINUS           &none     &none         &none             &none               &none               &none               &none
+                &kp GRAVE       &kp N1          &kp N2              &kp N3              &kp BSLH            &none     &none         &none             &none               &none               &kp RALT            &none
+                &none           &none           &kp DOT             &kp N0              &kp MINUS           &none     &none         &none             &none               &none               &none               &none
                 >;
         };
         sym_layer {            
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
-                &kp LBRC        &kp AMPERSAND   &kp ASTERISK        &kp LPAR            &kb RBRC            &none     &none         &none             &none               &none               &none               &none
+                &kp LBRC        &kp AMPERSAND   &kp ASTERISK        &kp LPAR            &kp RBRC            &none     &none         &none             &none               &none               &none               &none
                 &kp SEMI        &kp DOLLAR      &kp PERCENT         &kp CARET           &kp PLUS            &none     &none         &kp LSHIFT        &kp LCTRL           &kp LALT            &kp LGUI            &none
-                &kp GRAVE       &kp EXCL        &kp AT              &kp HASH            &kb PIPE            &none     &none         &none             &none               &none               &kb RALT            &none
-                &none           &none           &kb LPAR            &kp RPAR            &kb UNDER           &none     &none         &none             &none               &none               &none               &none
+                &kp GRAVE       &kp EXCL        &kp AT              &kp HASH            &kp PIPE            &none     &none         &none             &none               &none               &kp RALT            &none
+                &none           &none           &kp LPAR            &kp RPAR            &kp UNDER           &none     &none         &none             &none               &none               &none               &none
                 >;
         };        
         fun_layer {            
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
-                &kp F12         &kp F7          &kp F8              &kp F9              &kb PSCRN           &none     &none         &none             &none               &none               &none               &none
+                &kp F12         &kp F7          &kp F8              &kp F9              &kp PSCRN           &none     &none         &none             &none               &none               &none               &none
                 &kp F11         &kp F4          &kp F5              &kp F6              &kp SLCK            &none     &none         &kp LSHIFT        &kp LCTRL           &kp LALT            &kp LGUI            &none
-                &kp F10         &kp F1          &kp F2              &kp F3              &kb PAUSE_BREAK     &none     &none         &none             &none               &none               &kb RALT            &none
-                &none           &none           &kb K_APP           &kp SPACE           &kb TAB             &none     &none         &none             &none               &none               &none               &none
+                &kp F10         &kp F1          &kp F2              &kp F3              &kp PAUSE_BREAK     &none     &none         &none             &none               &none               &kp RALT            &none
+                &none           &none           &kp K_APP           &kp SPACE           &kp TAB             &none     &none         &none             &none               &none               &none               &none
                 >;
         };        
     };
