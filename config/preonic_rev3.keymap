@@ -31,7 +31,6 @@
 / {
     chosen {
         zmk,matrix-transform = &layout_grid_transform;
-        zmk,backlight = &backlight;
     };
 
     behaviors {
@@ -56,7 +55,8 @@
 
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
+        base_layer {
+            label ="Base";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none              &none               &none               &none               &none
                 &kp Q           &kp W           &kp F               &kp P               &kp B               &none     &none         &kp J              &kp L               &kp U               &kp Y               &kp SEMI
@@ -66,6 +66,7 @@
                 >;
         };
         nav_layer {
+            label ="Nav";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &kp U_REDO        &kp U_PASTE         &kp U_COPY          &kp U_CUT           &kp U_UNDO
@@ -74,7 +75,8 @@
                 &none           &none           &none               &none               &none               &none     &none         &kp ENTER         &kp BSPC            &kp DEL             &none               &none
                 >;
         };
-        {
+        mouse_layer {
+            label ="Mouse";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &kp U_REDO        &kp U_PASTE         &kp U_COPY          &kp U_CUT           &kp U_UNDO
@@ -84,6 +86,7 @@
                 >;
         };
         media_layer {
+            label ="Media";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &bl BL_TOG        &bl BL_CYCLE        &none               &none               &bl BL_INC
@@ -93,6 +96,7 @@
                 >;
         };
         num_layer {
+            label ="Num";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp LBKT        &kp N7          &kp N8              &kp N9              &kp RBKT            &none     &none         &none             &none               &none               &none               &none
@@ -102,6 +106,7 @@
                 >;
         };
         sym_layer {
+            label ="Sym";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp LBRC        &kp AMPERSAND   &kp ASTERISK        &kp LPAR            &kp RBRC            &none     &none         &none             &none               &none               &none               &none
@@ -111,6 +116,7 @@
                 >;
         };
         fun_layer {
+            label ="Fun";
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp F12         &kp F7          &kp F8              &kp F9              &kp PSCRN           &none     &none         &none             &none               &none               &none               &none
