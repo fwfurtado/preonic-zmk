@@ -27,7 +27,7 @@
 #define U_REDO  LC(LS(Z))
 
 
-// Begin Mouse 
+// Begin Mouse
 #define MOVE_Y(vert) ((vert)&0xFFFF)
 #define MOVE_Y_DECODE(encoded) (int16_t)((encoded)&0x0000FFFF)
 #define MOVE_X(hor) (((hor)&0xFFFF) << 16)
@@ -69,18 +69,18 @@
 
         mmv: mouse_move {
             compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
+            #binding-cells = <2>;
+            // x-input-code = <INPUT_REL_X>;
+            // y-input-code = <INPUT_REL_Y>;
             time-to-max-speed-ms = <300>;
             acceleration-exponent = <1>;
         };
 
          msc: mouse_scroll {
             compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
+            #binding-cells = <2>;
+            // x-input-code = <INPUT_REL_HWHEEL>;
+            // y-input-code = <INPUT_REL_WHEEL>;
             time-to-max-speed-ms = <300>;
             acceleration-exponent = <0>;
         };
@@ -88,7 +88,7 @@
 
     keymap {
         compatible = "zmk,keymap";
-        default_layer {            
+        default_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none              &none               &none               &none               &none
                 &kp Q           &kp W           &kp F               &kp P               &kp B               &none     &none         &kp J              &kp L               &kp U               &kp Y               &kp SEMI
@@ -97,7 +97,7 @@
                 &none           &none           &u_lt UL_MEDIA ESC  &u_lt UL_NAV SPACE  &u_lt UL_MOUSE TAB  &none     &none         &u_lt UL_SYM ENTER &u_lt UL_NUM BSPC   &u_lt UL_FUN DEL    &none               &none
                 >;
         };
-        nav_layer {            
+        nav_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &kp U_REDO        &kp U_PASTE         &kp U_COPY          &kp U_CUT           &kp U_UNDO
@@ -106,7 +106,7 @@
                 &none           &none           &none               &none               &none               &none     &none         &kp ENTER         &kp BSPC            &kp DEL             &none               &none
                 >;
         };
-        mouse_layer {            
+        mouse_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &kp U_REDO        &kp U_PASTE         &kp U_COPY          &kp U_CUT           &kp U_UNDO
@@ -115,7 +115,7 @@
                 &none           &none           &none               &none               &none               &none     &none         &mkp RCLK         &mkp LCLK           &mkp MCLK           &none               &none
                 >;
         };
-        media_layer {            
+        media_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &none           &none           &none               &none               &none               &none     &none         &rgb_ug RGB_TOG   &rgb_ug RGB_EFF     &rgb_ug RGB_HUI     &rgb_ug RGB_SAI     &rgb_ug RGB_BRI
@@ -124,7 +124,7 @@
                 &none           &none           &none               &none               &none               &none     &none         &kp C_STOP        &kp C_PP            &kp C_MUTE          &none               &none
                 >;
         };
-        num_layer {            
+        num_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp LBKT        &kp N7          &kp N8              &kp N9              &kp RBKT            &none     &none         &none             &none               &none               &none               &none
@@ -133,7 +133,7 @@
                 &none           &none           &kp DOT             &kp N0              &kp MINUS           &none     &none         &none             &none               &none               &none               &none
                 >;
         };
-        sym_layer {            
+        sym_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp LBRC        &kp AMPERSAND   &kp ASTERISK        &kp LPAR            &kp RBRC            &none     &none         &none             &none               &none               &none               &none
@@ -141,8 +141,8 @@
                 &kp GRAVE       &kp EXCL        &kp AT              &kp HASH            &kp PIPE            &none     &none         &none             &none               &none               &kp RALT            &none
                 &none           &none           &kp LPAR            &kp RPAR            &kp UNDER           &none     &none         &none             &none               &none               &none               &none
                 >;
-        };        
-        fun_layer {            
+        };
+        fun_layer {
             bindings = <
                 &none           &none           &none               &none               &none               &none     &none         &none             &none               &none               &none               &none
                 &kp F12         &kp F7          &kp F8              &kp F9              &kp PSCRN           &none     &none         &none             &none               &none               &none               &none
@@ -150,6 +150,6 @@
                 &kp F10         &kp F1          &kp F2              &kp F3              &kp PAUSE_BREAK     &none     &none         &none             &none               &none               &kp RALT            &none
                 &none           &none           &kp K_APP           &kp SPACE           &kp TAB             &none     &none         &none             &none               &none               &none               &none
                 >;
-        };        
+        };
     };
 };
