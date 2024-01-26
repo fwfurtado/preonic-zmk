@@ -24,8 +24,8 @@
 #define U_CUT   LC(X)
 #define U_PASTE LC(V)
 #define U_UNDO  LC(Z)
-#define U_REDOLS(LC))
- {
+#define U_REDO  LC(LS(Z))
+/ {
     behaviors
             hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
