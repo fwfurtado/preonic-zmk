@@ -54,7 +54,7 @@
                 &kp Q           &kp W           &kp F               &kp P               &kp B               &none     &none         &kp J              &kp L               &kp U               &kp Y               &kp SEMI
                 &hm LGUI A      &hm LALT R      &hm LCTRL S         &hm LSHIFT T        &kp G               &none     &none         &kp M              &hm LSHIFT N        &hm LCTRL E         &hm LALT I          &kp O
                 &kp Z           &hm RALT X      &kp C               &kp V               &kp D               &none     &none         &kp K              &kp H               &kp COMMA           &hm RALT DOT        &kp SLASH
-                &none           &none           &u_lt UL_MEDIA ESC  &u_lt UL_NAV SPACE  &none               &none     &none         &none              &none               &none               &none               &none
+                &none           &none           &u_lt UL_MEDIA ESC  &u_lt UL_NAV SPACE  &u_lt UL_MOUSE TAB  &none     &none         &none              &none               &none               &none               &none
                 >;
         };
         nav_layer {            
