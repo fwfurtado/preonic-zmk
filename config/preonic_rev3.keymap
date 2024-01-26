@@ -26,16 +26,16 @@
 #define U_UNDO  LC(Z)
 #define U_REDO  LC(LS(Z))
 / {
-    behaviors
-            hm: homerow_mods {
-                compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
-                tapping-term-ms = <150>;
-                quick-tap-ms = <0>;
-                flavor = "tap-preferred";
-                bindings = <&kp>, <&kp>;
-            };
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
+    };
 
     keymap {
         compatible = "zmk,keymap";
