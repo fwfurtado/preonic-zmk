@@ -21,11 +21,11 @@
 #define UL_SYM     5
 #define UL_FUN     6
 
-#define U_COPY  LC(C)
-#define U_CUT   LC(X)
-#define U_PASTE LC(V)
-#define U_UNDO  LC(Z)
-#define U_REDO  LC(LS(Z))
+#define U_COPY  LG(C)
+#define U_CUT   LG(X)
+#define U_PASTE LG(V)
+#define U_UNDO  LG(Z)
+#define U_REDO  LG(LS(Z))
 
 
 / {
